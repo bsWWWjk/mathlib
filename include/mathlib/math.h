@@ -76,7 +76,7 @@ namespace mathlib
             return MathError::NegativeFactorial;
         }
 
-        if (n == 0 && n == 1) {
+        if (n == 0 || n == 1) {
             res = 1;
             return MathError::Ok;
         }
