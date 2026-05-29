@@ -1,4 +1,5 @@
 #pragma once
+#include <climits>
 
 namespace mathlib
 {
@@ -45,6 +46,12 @@ namespace mathlib
         {
             return MathError::DivisionByZero;
         }
+
+        if (a == LLONG_MIN && b == -1)
+        {
+            return MathError::Overflow;
+        }
+
         res = a / b;
         return MathError::Ok;
     }
